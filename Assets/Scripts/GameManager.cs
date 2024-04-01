@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject prefab;
+    [SerializeField]
+    private Camera arCamera;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private LayerMask layersToInclude;
+
+    private GameObject foxController;
+
+    private void Awake()
     {
-        
+        EnhancedTouchSupport.Enable();
+    }
+    private void Update()
+    {
+        var activeTouches = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches;
+        if (activeTouches.Count > 0)
+        {
+            var touch = activeTouches[0];
+
+            //bool isOverUI = touch.screenPosition.Is
+        }
     }
 }
