@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.EnhancedTouch;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject prefab;
+    private GameObject foxPrefab;
     [SerializeField]
     private Camera arCamera;
 
@@ -26,7 +26,21 @@ public class GameManager : MonoBehaviour
         {
             var touch = activeTouches[0];
 
-            //bool isOverUI = touch.screenPosition.Is
+            bool isOverUI = touch.screenPosition.IsPointOverUIObject();
+
+            if (isOverUI) return;
+
+            if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+            {
+                var ray = arCamera.ScreenPointToRay(touch.screenPosition);
+                var hasHit = Physics.Raycast(ray, out var hit, float.PositiveInfinity, layersToInclude);
+
+                if (hasHit && foxController == null ) 
+                {
+                    foxController = Instantiate(foxPrefab, hit.point, Quaternion.identity);
+                }
+            }
+          
         }
     }
 }
