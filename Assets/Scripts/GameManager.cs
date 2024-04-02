@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
                 if (hasHit && foxController == null ) 
                 {
                     foxController = Instantiate(foxPrefab, hit.point, Quaternion.identity);
+                    //PlayerInputController.Instance.Bind(foxController.GetComponent<foxController>());
                 }
             }
           
