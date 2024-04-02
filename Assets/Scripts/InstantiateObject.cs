@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class InstantiateObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //private GameObject gameObject;
+    private void Start()
     {
-        
+     //   GameObject.Find("Fox1").SetActive(true);
+
     }
+
 
     // Update is called once per frame
     void Update()

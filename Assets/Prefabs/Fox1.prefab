@@ -1228,7 +1228,7 @@ GameObject:
   - component: {fileID: 7611198546965367325}
   - component: {fileID: 451078838826446367}
   m_Layer: 0
-  m_Name: Fox
+  m_Name: Fox1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1285,7 +1285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7611198546965367325}
-  foxObj: {fileID: 0}
 --- !u!1 &8912826480645297319
 GameObject:
   m_ObjectHideFlags: 0

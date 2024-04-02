@@ -1,18 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.XR.ARFoundation;
 public class GameActionManager : MonoBehaviour
 {
     bool walk = false;
     bool sit = false;
     public Animator animator;
-    public GameObject foxObj;
+    public GameObject gameObject;
+    //public GameObject foxObj;
+   // public ARTrackedImageManager imageManager;
+
+
 
     // Start is called before the first frame update
     //Fox(Clone)
     public void WalkActive()
     {
+        //GameObject foxObjClone = Fox(Clone);
         walk = true;
         animator.SetBool("WalkFront", true);
         
@@ -22,5 +28,10 @@ public class GameActionManager : MonoBehaviour
         sit = true;
         animator.SetBool("WalkFront", false);
         animator.SetBool("Sit", true);
+    }
+
+    public void activateObject()
+    {
+        gameObject.SetActive(true);
     }
 }
