@@ -7,8 +7,10 @@ public class GameActionManager : MonoBehaviour
     bool walk = false;
     bool sit = false;
     public Animator animator;
-    // Start is called before the first frame update
+    public GameObject foxObj;
 
+    // Start is called before the first frame update
+    //Fox(Clone)
     public void WalkActive()
     {
         walk = true;
