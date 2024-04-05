@@ -18,9 +18,11 @@ public class GameActionManager : MonoBehaviour
     //Fox(Clone)
     public void WalkActive()
     {
+        //GameObject.Find("Fox(Clone)").GetComponent<Animator>
         //GameObject foxObjClone = Fox(Clone);
-        walk = true;
-        animator.SetBool("WalkFront", true);
+        gameObject.SetActive(true);
+       // walk = true;
+       // animator.SetBool("WalkFront", true);
         
     }
     public void SitActive()
